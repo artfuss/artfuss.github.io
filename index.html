@@ -1,38 +1,83 @@
 <!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Online Document Viewer</title>
+    <style type="text/css">
+
+@charset 'utf-8';
+
+html {
+  font-family:arial, sans-serif;
+  font-size: 10px;
+}
+
+body {
+    width: 50%;
+  margin: 0px auto;
+  background: black url('data:image/png;base64,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');
+  padding-top: 150px;
+}
+
+#docxurl {
+  width: 85%;
+  padding: 5px 5px;
+  height: 25px;
+  font-size: 1.3rem;
+  border: none;
+}
+
+#viewButton {
+  float:right;
+  background: linear-gradient(to bottom, yellow 50%, orange);
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  outline: none;
+  text-decoration: none;
+  box-shadow: 2px 2px 8px #444;
+}
+
+#viewButton:visited {
+  color: initial;
+}
+
+#viewButton:hover {
+  background: linear-gradient(to bottom, yellow 20%, orange);
+}
+
+footer {
+  margin: 100px auto 0px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #ccc;
+  text-shadow: 2px 2px 2px black;
+}
+    </style>
+  </head>
+
+  <body>
+
+    <main>
+      <input type="text" id="docxurl" placeholder="Copy the Document url here">
+      <a href="" target=_self id="viewButton">View</a>
+    <main>
+
+    <footer>Suneet Badoni &copy; 2016</footer>
+  </body>
+
+  <script>
+
+    var viewButton = document.getElementById("viewButton");
+    viewButton.onclick = function(event) {
+      event.preventDefault();
+      var githuburl = document.getElementById("docxurl").value;
+      if(githuburl && githuburl!=="" && githuburl.includes("github")) {
+        githuburl = githuburl.replace("blob/","").replace("github","raw.githubusercontent");
+        location.href="http://docs.google.com/gview?url="+githuburl;
+      }
+    }
+  </script>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>My test page</title>
-	<link rel="stylesheet" href="styles/style.css">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
-</head>
-
-<body>
-
-<h1>Mozilla is Cool, </h1>
-<img src="images/firefox-icon.png" alt="Firefox Logo Image">
-
-<p>At Mozilla, we're a global community of</p>
-
-<ul>
-<li>technologists</li>
-<li>thinkers</li>
-<li>builders</li>
-</ul>
-
-<p>
-working together to keep the internet alive and accessible, so people worldwide can
-be informed contributors and creators of the Web. We believe this act of human collaboration
-across an open platform is essential to individual growth and our collective future.
-</p>
-
-<p>Read the 
-<a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto </a>
-to learn even more about the values and priniciples that guide the pursuit of our mission.
-</p>
-
-<button>Change User</button>
-
-<script src="scripts/main.js"> </script>
-</body>
-</html>
