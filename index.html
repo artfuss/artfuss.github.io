@@ -21,39 +21,61 @@ body {
 }
 
 #docxurl {
-  width: 85%;
+  min-width: 85%;
   padding: 5px 5px;
   height: 25px;
   font-size: 1.3rem;
   border: none;
+  box-shadow: 2px 2px 5px black;
 }
 
-#viewButton {
-  float:right;
-  background: linear-gradient(to bottom, yellow 50%, orange);
-  padding: 5px 15px;
-  border-radius: 10px;
-  font-size: 2rem;
-  line-height: 2.5rem;
-  outline: none;
-  text-decoration: none;
-  box-shadow: 2px 2px 8px #444;
-}
-
-#viewButton:visited {
-  color: initial;
-}
-
-#viewButton:hover {
-  background: linear-gradient(to bottom, yellow 20%, orange);
-}
 
 footer {
   margin: 100px auto 0px;
   text-align: center;
-  letter-spacing: 2px;
-  color: #ccc;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: red;
   text-shadow: 2px 2px 2px black;
+}
+
+#viewButton {
+  float:right;
+  width: 70px;
+  font-size: 2rem;
+  line-height: 1.7;
+  outline: none;
+  text-align: center;
+  background-image: linear-gradient(to top left,  
+                      rgba(0,0,0,.2),
+                      rgba(0,0,0,.2) 30%,
+                      rgba(0,0,0,0));
+  
+  background-color: red;            
+  color: #ff7744;
+  text-shadow: 1px 1px 2px black;
+  border-radius: 8px;
+  border: 1px solid rgb(200,0,0);
+
+  box-shadow: 2px 2px 5px black,
+              inset 2px 2px 3px rgba(255,255,255,.6),
+              inset -1px -1px 3px rgba(0,0,0,.5);
+}
+
+#viewButton:link {
+  text-decoration: none;
+}
+#viewButton:visited {
+  color: #ff7744;
+}
+#viewButton:active {
+  background-image: linear-gradient(to bottom right,  
+                      rgba(0,0,0,.2),
+                      rgba(0,0,0,.2) 30%,
+                      rgba(0,0,0,0));
+  box-shadow: 2px 2px 5px black,
+              inset -2px -2px 3px rgba(255,255,255,.6),
+              inset 1px 1px 3px rgba(0,0,0,.5);
 }
     </style>
   </head>
