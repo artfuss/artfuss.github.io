@@ -95,6 +95,17 @@ footer {
     var viewButton = document.getElementById("viewButton");
     viewButton.onclick = function(event) {
       event.preventDefault();
+      openDoc(); 
+    }
+    document.onkeyup = function(event) {
+      var key = event.which || event.keyCode;
+      if(key === 13) {
+        openDoc();
+        return true;
+      }
+      return false;
+    }
+    function openDoc() {
       var githuburl = document.getElementById("docxurl").value;
       if(githuburl && githuburl!=="" && githuburl.includes("github")) {
         githuburl = githuburl.replace("blob/","").replace("github","raw.githubusercontent");
